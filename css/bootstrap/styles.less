@@ -1,0 +1,408 @@
+/*!
+ * Bootstrap v2.1.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
+@import "twitter/reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+// Grid system and page structure
+@import "twitter/scaffolding.less";
+@import "twitter/grid.less";
+@import "twitter/layouts.less";
+
+// Base CSS
+@import "twitter/type.less";
+@import "twitter/code.less";
+@import "twitter/forms.less";
+@import "twitter/tables.less";
+
+// Components: common
+@import "font-awesome.less"; // Font Awesome icons
+@import "twitter/dropdowns.less";
+@import "twitter/wells.less";
+@import "twitter/component-animations.less";
+@import "twitter/close.less";
+
+// Components: Buttons & Alerts
+@import "twitter/buttons.less";
+@import "twitter/button-groups.less";
+@import "twitter/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "twitter/navs.less";
+@import "twitter/navbar.less";
+@import "twitter/breadcrumbs.less";
+@import "twitter/pagination.less";
+@import "twitter/pager.less";
+
+// Components: Popovers
+@import "twitter/modals.less";
+@import "twitter/tooltip.less";
+@import "twitter/popovers.less";
+
+// Components: Misc
+@import "twitter/thumbnails.less";
+@import "twitter/labels-badges.less";
+@import "twitter/progress-bars.less";
+@import "twitter/accordion.less";
+@import "twitter/carousel.less";
+@import "twitter/hero-unit.less";
+
+// Utility classes
+@import "twitter/utilities.less"; // Has to be last to override when necessary
+
+
+//fonts
+
+/* Regular */
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/leaguegothic-regular-webfont.eot');
+    src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-regular-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-regular-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+/* Italic */
+@font-face {
+    font-family: 'League Gothic';
+    src: url('../fonts/leaguegothic-italic-webfont.eot');
+    src: url('../fonts/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-italic-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-italic-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-italic-webfont.svg#league_gothic_italicregular') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+/* Condensed */
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('../fonts/leaguegothic-condensed-regular-webfont.eot');
+    src: url('../fonts/leaguegothic-condensed-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-condensed-regular-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-condensed-regular-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-condensed-regular-webfont.svg#league_gothic_condensed-Rg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+/* Condensed Italic */
+@font-face {
+    font-family: 'League Gothic Condensed';
+    src: url('../fonts/leaguegothic-condensed-italic-webfont.eot');
+    src: url('../fonts/leaguegothic-condensed-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/leaguegothic-condensed-italic-webfont.woff') format('woff'),
+         url('../fonts/leaguegothic-condensed-italic-webfont.ttf') format('truetype'),
+         url('../fonts/leaguegothic-condensed-italic-webfont.svg#league_gothic_condensed_itaRg') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    -webkit-font-smoothing: antialiased;
+}
+
+//colors
+//====================
+@black: black;
+@link-reg: white;
+
+
+* { margin: 0; padding: 0; }
+body { background: @black; font: 20px/1.2 'League Gothic', sans-serif;font-weight: normal; letter-spacing: .1em;}
+
+a{
+	color: @link-reg;
+	text-decoration: none;
+	&:hover{
+		color: @black;
+		background: @link-reg;
+		text-decoration: none;
+	}
+}
+
+.group{
+	.clearfix;
+}
+
+ul, ol{
+	list-style-type: none;
+	margin: 0px;
+	li{
+		margin: 0px;
+	}
+}
+
+aside{
+	text-align: center;
+	position: fixed;
+	a#site-logo{
+		&:hover{
+			background: transparent;
+		}
+	}
+	ul.mainnav{
+		li{
+			a{
+				display: block;
+				text-align: center;
+				padding: 5px 0px;
+			}
+		}
+	}
+}
+
+div.homepage-wrap{
+	h2{
+		text-align: right;
+	}
+	#category-items-list{
+		margin-top: 0px;
+	}
+}
+
+div.widget.Tumblr{
+	h2{
+		text-align: right;
+	}
+	ul{
+		.clearfix;
+		li.tumblr_post{
+			float: left;
+			width: 228px;
+			margin-left: 1px;
+			text-align: center;
+			&:first-child{
+				margin-left: 0px;
+			}
+			&:nth-child(3n+1){
+				clear: both;
+			}
+			a{
+				display: block;
+			}
+		}
+	}
+}
+
+#category-list{
+	padding: 10px 0 0 0;
+}
+
+#category-list *{
+	list-style-type: none;
+}
+
+#category-list li{
+	font-size: 1.5em;
+	padding-left: 0px;
+	text-indent: 10px;
+}
+
+#category-list li a{
+	display: block;
+	text-decoration: none;
+	color: #1A191F;
+}
+
+#category-list li a:hover, #category-list li a:active{
+	background: rgb(204,204,204); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgba(204,204,204,.6) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(204,204,204,.6)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgba(204,204,204,.6) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgba(204,204,204,.6) 0%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgba(204,204,204,.6) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+	background: linear-gradient(left,  rgba(204,204,204,.6) 0%,rgba(255,255,255,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='transparent',GradientType=1 ); /* IE6-9 */
+}
+
+#category-list li:first-child{
+	font-size: 2em;
+	border-bottom: 2px solid black;
+	margin-bottom: 10px;
+}
+
+#category-list ul{
+	padding: 0 0 0 0;
+}
+
+#category-list ul li, #category-list ul li:first-child{
+	font-size: .9em;
+	border-bottom: none;
+	text-indent: 30px;
+}
+
+.feat-img{
+	text-align: center;
+}
+
+#main-content{
+	text-align: center;
+	background:url(images/contentBG.png) 0 -20px repeat-x;
+	padding-left: 10px;
+	min-height: 680px;
+	position: relative;
+}
+
+#slider-wrapper{
+	display: inline-block;
+}
+
+.button{
+	text-decoration: none;
+	padding: .75em 1em;
+	color: white;
+	background: #1A191F;
+	font-weight: bold;
+}
+
+.button:hover, .button:active{
+	background: #CFD0DB;
+	color: white;
+}
+
+h2{
+	font-size: 1.4em;
+	padding-left: 5px;
+}
+
+h3{
+	font-size: 1.3em;
+}
+
+
+/* category items */
+#category-items-list{
+	width:100%;
+	list-style-type: none;
+	clear: both;
+	margin-top: 30px;
+	padding-bottom: 20px;
+	display: inline-block;
+}
+
+.category-item{
+	float: left;
+	width: 175px;
+	text-align: center;
+	background: #1A191F;
+	height: 175px;
+	overflow: hidden;
+	position: relative;
+}
+
+.category-item a{
+	text-align: center;
+	width: 175px;
+	height: 175px;
+}
+
+.category-item a img{
+	display: inline;
+}
+
+/*  uncomment if tumblr is no longer used
+.section-title{
+	text-align: left!important;
+	font-weight: bold;
+	font-family: 'signpainter';
+	font-size: 1.5em;
+	display: inline-block;
+}
+
+.post-content{
+	background-color: #CFD0DB;
+	padding: 10px;
+}
+
+.post-content p{
+	text-align: left;
+}
+
+.text-post-img{
+	float:right;
+	margin: 10px;
+	-webkit-box-shadow:2px 2px 23px -5px #333333;
+	-moz-box-shadow:2px 2px 23px -5px #333333;
+	-o-box-shadow:2px 2px 23px -5px #333333;
+	-ms-box-shadow:2px 2px 23px -5px #333333;
+	box-shadow:2px 2px 23px -5px #333333;
+}
+
+#updates-link{
+	text-decoration: none;
+	padding: .75em 1em;
+	font-weight: bold;
+	background: #CFD0DB;
+	clear: both;
+	float: right;
+	margin-bottom: 40px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+}*/
+
+/* Footer */
+
+footer{
+	width: 100%;
+	background: black;
+	color: white;
+	font-size: .8em;
+	padding-bottom: 10px;
+	position: absolute;
+	bottom: 0px;
+	margin-top: 10px;
+}
+
+#footer-left{
+	float: left;
+	margin: 5px;
+}
+
+#footer-right{
+	float: right;
+	margin: 5px;
+}
+
+footer a{
+	color: white;
+	display: inline-block;
+}
+
+
+/*  Contact Template */
+
+#contact{
+	text-align: center;
+	margin-top: 50px;
+}
+
+#contact span{
+	font-size: 1.3em;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 30px;
+}
+
+#contact ul{
+	list-style-type:none;
+}
