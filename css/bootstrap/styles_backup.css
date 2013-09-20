@@ -6396,27 +6396,9 @@ ul li,
 ol li {
   margin: 0px;
 }
-.page-wrap {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-@media (min-width: 1300px) {
-  .page-wrap .row-fluid aside {
-    max-width: 286px;
-  }
-}
 aside {
   text-align: center;
   position: fixed;
-}
-aside a#site-logo {
-  display: block;
-  max-width: 75%;
-  text-align: center;
-  margin: 0 auto;
-}
-aside a#site-logo img {
-  min-width: 200px;
 }
 aside a#site-logo:hover {
   background: transparent;
@@ -6448,18 +6430,9 @@ div.widget.Tumblr ul:after {
   clear: both;
 }
 div.widget.Tumblr ul li.tumblr_post {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  max-width: 33.33333333333333%;
-  float: left;
-  height: 500px;
-  padding: 2%;
-  background: black;
-  overflow: hidden;
-}
-div.widget.Tumblr ul li.tumblr_post .widget-head {
-  margin-bottom: 20px;
+  display: block;
+  margin-left: 1px;
+  clear: both;
 }
 div.widget.Tumblr ul li.tumblr_post > a {
   display: inline-block;
@@ -6474,19 +6447,6 @@ div.widget.Tumblr ul li.tumblr_post a.tumblr_link {
 }
 div.widget.Tumblr ul li.tumblr_post:first-child {
   margin-left: 0px;
-}
-@media (max-width: 976px) {
-  div.widget.Tumblr ul li.tumblr_post {
-    max-width: 50%;
-  }
-}
-@media (max-width: 480px) {
-  div.widget.Tumblr ul li.tumblr_post {
-    max-width: 100%;
-    display: block;
-    height: auto;
-    margin-bottom: 40px;
-  }
 }
 #category-list {
   padding: 10px 0 0 0;
@@ -6681,9 +6641,6 @@ footer a {
   list-style-type: none;
 }
 @media (max-width: 767px) {
-  body {
-    padding: 0 2%;
-  }
   aside {
     position: static;
   }

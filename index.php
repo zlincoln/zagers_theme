@@ -9,7 +9,6 @@
 		
 		?>
 		<div class="homepage-wrap">
-			<h2>Selected Works</h2>
 			<ul id="category-items-list" class="group">
 				<?php if (have_posts()) : ?>
 				<?php while(have_posts()) : the_post();
@@ -45,6 +44,5 @@
 			// do nothing
 			?>
 			<?php endif; ?>
-
 		</div><!-- /.homepage-wrap -->
 <?php get_footer();?>

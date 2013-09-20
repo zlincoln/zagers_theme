@@ -53,13 +53,17 @@
 	  $(function() { 
      	
      	// Initialize shadowbox
-     	Shadowbox.init();
-
-		// add shadowbox to tumblr images
-		$('#tumblr-widget-2 a > img').each(function(){
-			$(this).parent().attr('rel','shadowbox');
-		});
-
+			$('.tumblr_post').each(function(){
+				$(this).find('br').remove();
+				$(this).find('> a').attr('rel', 'shadowbox').wrap('<div class="widget-head">');
+				$(this).find('> p:last-child').addClass('date').appendTo($(this).find('div.widget-head'));
+				$(this).find('p').each(function(){
+					if($(this).html() == ''){
+						$(this).remove();
+					}
+				})
+			});
+			Shadowbox.init();
     });//END document.ready
 
 	</script>
