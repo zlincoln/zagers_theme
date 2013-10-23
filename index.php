@@ -3,7 +3,7 @@
 		<?php
 		$cat_id = get_cat_ID('featured');
 		
-		$feat_query = 'cat=' . $cat_id . '&showposts=8';
+		$feat_query = 'cat=' . $cat_id . '&showposts=10';
 		
 		query_posts($feat_query);
 		
